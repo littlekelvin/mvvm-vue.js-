@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <ol>
+            <li>{{name}}</li>
+            <li>{{age}}</li>
+            <li>{{address}}</li>
+        </ol>
+        <div>
+            <span>{{name}}</span>
+        </div><br>
+        <div>
+            <input v-model="name"/>
+        </div>
+        <div>
+            <button v-on:click="reset">Click Me</button>
+        </div>
+    </div>
+</body>
+
+<script src="./js/observer.js"></script>
+<script src="./js/Watcher.js"></script>
+<script src="./js/Compile.js"></script>
+<script src="./js/index.js"></script>
+<script type="text/javascript">
+    var selfVue = new SelfVue({
+        el:'#app',
+        data:{
+            name:'hello world',
+            age:23,
+            address:'software road'
+        },
+        methods:{
+            reset: function () {
+                this.name = 'hello world';
+            }
+        },
+        mounted: function () {
+            console.log('be mounted');
+        }
+    });
+</script>
+</html>
